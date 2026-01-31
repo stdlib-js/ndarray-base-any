@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import any from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-any@esm/index.mjs';
+import any from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-any@v0.1.0-esm/index.mjs';
 ```
 
 #### any( arrays )
@@ -129,7 +129,7 @@ The provided ndarray should be an object with the following properties:
 
 import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-array@esm/index.mjs';
-import any from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-any@esm/index.mjs';
+import any from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-any@v0.1.0-esm/index.mjs';
 
 var x = {
     'dtype': 'generic',
