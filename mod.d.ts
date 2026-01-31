@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,60 +16,45 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { ArrayLike } from '@stdlib/types/array';
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
 * Tests whether at least one element in an ndarray is truthy.
 *
-* @private
-* @param {Object} x - object containing ndarray meta data
-* @param {*} x.dtype - data type
-* @param {Collection} x.data - data buffer
-* @param {NonNegativeIntegerArray} x.shape - dimensions
-* @param {IntegerArray} x.strides - stride lengths
-* @param {NonNegativeInteger} x.offset - index offset
-* @param {string} x.order - specifies whether `x` is row-major (C-style) or column-major (Fortran-style)
-* @returns {boolean} result
+* @param arrays - array-like object containing an input ndarray
+* @returns boolean indicating whether at least one element is truthy
 *
 * @example
 * var Float64Array = require( '@stdlib/array-float64' );
+* var ndarray = require( '@stdlib/ndarray-base-ctor' );
 *
 * // Create a data buffer:
-* var xbuf = new Float64Array( [ 1.0, 2.0 ] );
+* var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
 *
-* // Define the shape of the input array:
-* var shape = [];
+* // Define the shape of the array:
+* var shape = [ 3, 1, 2 ];
 *
 * // Define the array strides:
-* var sx = [ 0 ];
+* var sx = [ 4, 4, 1 ];
 *
 * // Define the index offset:
 * var ox = 1;
 *
-* // Create the input ndarray-like object:
-* var x = {
-*     'dtype': 'float64',
-*     'data': xbuf,
-*     'shape': shape,
-*     'strides': sx,
-*     'offset': ox,
-*     'order': 'row-major'
-* };
+* // Create the input ndarray:
+* var x = ndarray( 'float64', xbuf, shape, sx, ox, 'row-major' );
 *
 * // Test elements:
-* var out = any0d( x );
+* var out = any( [ x ] );
 * // returns true
 */
-function any0d( x ) {
-	if ( x.data[ x.offset ] ) {
-		return true;
-	}
-	return false;
-}
+declare function any( arrays: ArrayLike<ndarray> ): boolean;
 
 
 // EXPORTS //
 
-module.exports = any0d;
+export = any;
